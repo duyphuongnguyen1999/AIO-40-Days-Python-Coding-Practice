@@ -1,6 +1,6 @@
 def quadratic_equation(a, b, c):
     if a == 0:
-        assert b != -0, "b must not zero"
+        assert b != -0, "b must not be zero"
         x = -c / b
         print(f"{x = }")
     else:
@@ -18,9 +18,9 @@ def quadratic_equation(a, b, c):
 
 
 def main():
-    quadratic_equation(a=2, b=6, c=4)
-    quadratic_equation(a=1, b=2, c=1)
-    quadratic_equation(a=4, b=6, c=3)
+    print("Test case 1: "), quadratic_equation(a=2, b=6, c=4)
+    print("Test case 2: "), quadratic_equation(a=1, b=2, c=1)
+    print("Test case 3: "), quadratic_equation(a=4, b=6, c=3)
 
 
 if __name__ == "__main__":
