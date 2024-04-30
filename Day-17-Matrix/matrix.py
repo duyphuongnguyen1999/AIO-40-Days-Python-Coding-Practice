@@ -6,12 +6,16 @@ class MatrixManipulation:
     # Constructor
     def __init__(self, mat_a, mat_b):
         # Run validation to received arguments
-        assert isinstance(
-            mat_a, list
-        ), f"mat_a must be a list, but received {type(mat_a)}"
-        assert isinstance(
-            mat_b, list
-        ), f"mat_b must be a list, but received {type(mat_b)}"
+        assert (
+            isinstance(mat_a, list)
+            and all(isinstance(row, list) for row in mat_a)
+            and all(isinstance(x, numbers.Number) for row in mat_a for x in row)
+        ), "mat_a must be a 2D-list (matrix)"
+        assert (
+            isinstance(mat_b, list)
+            and all(isinstance(row, list) for row in mat_b)
+            and all(isinstance(x, numbers.Number) for row in mat_b for x in row)
+        ), "mat_b must be a 2D-list (matrix)"
 
         # Assign value for class attribute
         self.mat_a = mat_a
@@ -58,7 +62,7 @@ class MatrixManipulation:
     def matrix_multiplication(self):
         assert (
             self.mat_a_shape[1] == self.mat_b_shape[0]
-        ), "Number of columns in mat_a must equal to the number of rows in mat_b"
+        ), "Number of columns in mat_a must be equal to the number of rows in mat_b"
 
         result_nrows = self.mat_a_shape[0]
         result_ncols = self.mat_b_shape[1]
