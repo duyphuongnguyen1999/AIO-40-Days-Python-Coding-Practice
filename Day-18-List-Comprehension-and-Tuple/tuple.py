@@ -30,18 +30,13 @@ def main():
     print("Question 1:")
     my_tuple1 = (2, 3)
     my_tuple2 = (3, 6)
-    print(f"{my_tuple1 = }")
-    print(f"{my_tuple2 = }")
-
     vectors = VectorManipulation(my_tuple1, my_tuple2)
-
     print("Question 2:")
     print("Result_vector1 = ", vectors.sum())
     print("Result_vector2 = ", vectors.multiply())
-
     print("Question 3:")
     print("Distance: ", vectors.distance())
-
+    print("Question 4:")
     print("my_tuple1 value=3 index: ", my_tuple1.index(3))
     print("my_tuple2 value=3 index: ", my_tuple2.index(3))
 
